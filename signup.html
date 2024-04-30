@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up - Alumni nexus</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(signupback.jpeg);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        body center {
+            font-size: 40px;
+            padding-bottom: 1cm;
+            width: 100%;
+            color: lightsalmon;
+        }
+
+        .container {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            width: 100%;
+            max-width: 1131px;
+        }
+
+        .signup-form {
+            font-family: "Roboto Mono", "Courier New", monospace;
+            width: 100%;
+            /* Set form width to 100% */
+            max-width: 500px;
+            /* Limit maximum width if necessary */
+            margin-left: 20px;
+            /* Adjust margin as needed */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .signup-form h2 {
+            font-size: 1px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            color: black;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            width: 92%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styles for the image */
+        .signup-img {
+            border-radius: 4px;
+            padding-left: 0px;
+            width: 419px;
+            height: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center><b>E-voltspot</b></center>
+    <div class="container">
+        <img src="signup.jpg" alt="Sign Up Image" class="signup-img">
+        <form class="signup-form">
+            <h2 class="sign">
+                <center class="sign">Sign Up</center>
+            </h2>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileno">Mobile Number:</label>
+                <input type="tel" id="mobileno" name="mobileno" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn" ><a href="evoltspot.html">Sign Up</a></button>
+        </form>
+    </div>
+
+
+    
+</body>
+
+</html>
