@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+            transition: all 0.2s linear;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px;
+            background: #d6eef1;
+        }
+
+        .container form {
+            width: 700px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .container form .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .container form .row .col {
+            flex: 1 1 250px;
+        }
+
+        .col .title {
+            font-size: 20px;
+            color: rgb(237, 55, 23);
+            padding-bottom: 5px;
+        }
+
+        .col .inputBox {
+            margin: 15px 0;
+        }
+
+        .col .inputBox label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .col .inputBox input,
+        .col .inputBox select {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+
+        .col .inputBox input:focus,
+        .col .inputBox select:focus {
+            border: 1px solid #000;
+        }
+
+        .col .flex {
+            display: flex;
+            gap: 15px;
+        }
+
+        .col .flex .inputBox {
+            flex: 1 1;
+            margin-top: 5px;
+        }
+
+        .col .inputBox img {
+            height: 34px;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 1px #000);
+        }
+
+        .container form .submit_btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 17px;
+            background: rgb(1, 143, 34);
+            color: #fff;
+            margin-top: 5px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .container form .submit_btn:hover {
+            background: #3d17fb;
+        }
+
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button {
+            display: none;
+        }
+
+        h1 {
+            color: #c30808;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#">
+            <center>
+                <h1>payment</h1>
+            </center>
+            <div class="row">
+            </div>
+            <div class="col">
+                <div class="inputBox">
+                    <label for="name">
+                        Payment Method:
+                    </label>
+                    <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-credit-card-commercial-element-cardfinancial-elementai-illustration-png-image_4066167.jpg"
+                        alt="credit/debit card image">
+
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADOCAMAAADR0rQ5AAABsFBMVEUpeuwtqU/9vQD////qQzXl5eXk5OTm5ub4+Pjt7e329vbs7Oz6+vrw8PDp6en9vgAAp1P+wwApee/pOTctq0Ipd/PxOzMRrlApfOj+uQD4//8tqkctrEAqhs0fd+zpPTYAbOsQcuvqOyzqNybqMR8kp0ry7PHVVznsUjLwcCr3nxnzhCT1kh+tszIAdfVGplEAojmKqudIh+ttlUmVgkQto2vsi4PnVkcrkqzduR3tXS8rlaJDqkz5phUqjL3yfSbQtyTquxWDrz+6tS4tpmB3n+osoHorj7RtrUSZtOuasTnz59Pu3cDd7N6q0q+Sw5d1u35XtG7j7+TE2MSEv4rK5NCayZ5ks3Cwzq/P3PhXjOa4y/Ouxvauv+HV2eOIiEameEK1bz98jke/aD3KYDu138LGVCapjF/xwLrqdWkjfdv829pvlEnh2NIsm4znXk7nj4TgczDpsar65eTkyL4snoMqicfst7Lnn5XKsG2+p4WLl7l3rkJzjsmvoZXetFxghtLxooD7znG6rm752Jn2wD6TnaT3x1+qqIEAavWloY7u1qjAx73yz4no3MX/5rkeQvzAAAARRklEQVR4nO2d+3sbxRWGZa2llbSrkW0QsuRibEneQAHfEuwCgRJDIM7dceLgS0yA0tpJjVM7hbTQlqaklLqBf7mzF0l73/lmZ2SnT88vJw+PCX45853vzOwto9DIq2reybmIrIKZxGSdI2tmzgVyLioXaS5E5sz/qftPnbP+OTEMw8w0leOo88m0CDUNxpyLyCqYLdocxVWu3Lp67frKysoMjZXb167euqEYxKG1fy4sa2C2aLs5AxCLJVcN48rV62dnZ8fGpswYoEHT2Ozs7PWrlFyNJE5PnlHFr26WVa6Q1ZtTs2MWayAo+tT1VWKEr24mTcevcjd1H7VdWhuYDSfukU/dvBJCnWfTdAJ1Lues3OSci8gqllXjyvXZqXhmG3x25Qud5JwV3csamO2V7c5oNxOg7VsrCWX2FHxN73a/NNr2dbM+r24DYLZibHatZDzbfm1cuY0x2wW/qRKPphm1nURNxZ2QcxFZjc9eTWs3cWab+5o9vfBpOqjtPvq1sTrAxWxxD3xs5J5Bv87RQvMymzG2smooz5xf35jhLrRT7tmbpRBth2icya9ladqTVyPGMIz7qvX3OZrN8Wm6f35tXEu1unvcU6uKkN1HP1a3cXNMCDSN2ds3mHacJ8CvxUGby/xa2YjQdl6UX4vQtEhok3vqqkF82o7MjpZ9Wb5fG+kcKyzGZm4poKb77NfkY+HQA5a8jUhtnwC/vpLescKCDqmkHKNpfr8WoWkl7XASzT1wlUvTZpbs18aa2E7mibGZVeNE+nVehqi7MTV7ncRo+7j82rgua313uMfW+P06NXXOny1qdVVqqa0YG/hCUYPTir2So7Jcv56RDk1jduXGSfJr46rEVuYKugfVlf74NdGKxQTqvGRRu7jH1jTiWd2BVR5JzVhrcwZe35qb29iYm9s0NBLVv43bfaO2Xcxd44Ra45pen5ufmJwct2JyYnQzQtPKLfmtzB3mkCrJrwnZmqfAGVdMTi6T0Hr3sdJWUHkTIsG51OJyZtKD7HDf0UiAeq3f1OYe9OPObB6taTd1LG3OydvzkwFkm9tc59bPkU4u9Wd9T03VujFlnqResehUhzIiA35dXg6pc5d7fr3o0XYfWhkFHjj9yd1PT5lx9+6Z0wMUffZ23gjRNK9fF89HFNqO8cmNvOvnpbeyWm3ms89PvWDGoBnWn174zd3TU7NryT2c1a+1jVhoi3u5Ry0Xeap29swpB9cblPzzMzNfMPh1ztGiP3s0PZcEbS7zyU06E5valtrKarXTn4cid8l/+7u9MonRNqNfkzsTydCWvLetn5e4vmu1TxZjkO1othf09H6dZ6i0vcwnzhcUY0VaqadqnwwmMtvcO42Ufq1tRHfvAPf4lpQDQitqp9mYzWjv0tk8XNuZOC13MtlkLbW9zO99+As50FOfMjOb5V7cI6HaVln8OqeMspfajJHprwaeF89cmzmFQFPs1v0Gt19rW1CpLe7q22OiN9e130PIVrTva7x+vT2BQtOo3ntD7DKvfYYV2sF+qIVo2+3XoZrOqUWglXnK/e6UwHLXzvBAU2xH22pH04x+vQ6v7065R78UVm5eaBoFLr8e5YQ2uV8U1NX4lrcVzf2gbydTL/OW2oyRkbefFzCx1E5zQw8Oth4UAyfDbg2rwUyMNNBWuT9Ir+4ZfmYa7R1N9Wo70a/5Wpm73KNvpMWunUpFPdhE/Xp9IiU0xc6kxE7RyexoLYB+nZrZxB79IJW204jajvZ97347E6JlV8anslDsF9N08tofnktLTfs44tdCoGlLe5sfe+j14XdeTsvdfsju19r5tK2sE6P8pT6bzVaGX3vppXTYi7F+7aHnnsoCUf0Vb7GH3szSGK688lwq7vZOwK+pLYdqe15UqWmxedv4hawVleH6W2mWeXOf0a+JmFZmR/VLPuyhc9lsh/u1wRTlbu+pbH4trtL8bXwp24vhbIpl3lzQWPy6OCeSOjPCR511R2X4nRTLnLj8mhBH075MBExl7qh+yDGpDL2ezfq4X+XFbj8sW5omajnGr1MP4D7qtzmEfTYbiOHXOLGbC41EvybiXMuOka/wJT70XpA6O/wOJ/ZiI9GvidhK87WzCyHQFPuXfNjtQ9Xr1wFtC25lfNT2gCJskbcONELKcX6d9ixBCPVSODTFfoXHwJoLSX4tbABPQT1UiaKuDL/MU+zeLB7u14Jdi4s64FpubK6O1mzE+TVBr/AwUb+L1joamq7xX3Os8fah5dckwq9THYtGBOrXoa7VK3aWo9bth2qMX+sSoOHZLGRA8RSbo4+3dkiMX8sodWYELPW5eOpsBa916xGJ8GtCXWtCAnT1I0zWSwnQtNiwsluPNNuvSdCvxR0buQM8QhpKgs5W6jj1QaRfqxJcCz4ujHOtbrHhUcWiDvdrIvDYyBXgxc1k6GwF7md2rXt+rTua1nVBJ+C+AG0r3rW62FzUJMyvNQnMVNVYqcP3WoEl/hZKHeXXmhTXqv4RK3WSaznUqLDbDyP8WtTFDk+M3MNKfZEJOjv8Kkjd6p2H61TLxNE0KQvfVptRfQMay5Jdyw54C9Ism5rWlZLPr8VvqzPm2RFUahbX4qJu7kbsr6UMKCPYddyEAZyfuvUodH+tbktpZdglLjbX4qFu3/ech9uapmte8GGwHeAs+i0rNK5rqmm9FPBr0YfBVoAXuBhdywywh0edh8uYRcdHBe+1XNTYeUr7vh52Hi5nFv0Q21ezQ9PZDPNr9/Xrrl8rUvr3i5hrvc8OXalDsqYd3Na0qe2uXxM5s6gk1zKpsUsg7Xwu7Pr1hARodECJuNgRvsChMbz5oBh2v5mUWRQ8LFtCSo0t8Dbx3G9m+7VSmpAAjQ4okRc7Upe6dVCkmtYdv9Ydv0Ye4mGOcWyvNcS41+Ip9WKpq+meXxOuhxySAr0DB4AGbcu5T8Hn11JKPXIPW9+Aa4ENvLlb9N0fTte6rmHPazHGNHar8AVA1RXsGkB7T+tpuufXEq7moZfzgAEcHcHNLWbw/nDw0TzGmB5CoEHXwmZRPex5LimqRs/9AWi0lX3t0bTj15qUBp7BNphQK4M21s39kkfTHb+WcrkaOwxGBvDsMLS8zecAwp7nknFnAjigMB8bZdF9ddP/zIfj1zKG0WnsMHgJWd9Z7DChFPamL12R0MFH3sVKDbkWNoA/Unyatv2aSNhtVRFm9hNwq9TgnYVaLvT566L44zJwrwW1sgp0q1l7h/g17fi1+FJjJ4SQa2F34TR3G6Fv8cto4o/+wb0WNICDZwmHhYCmbb8W3sxQ15LXypoLWtT7UoRTg5cwlwBo8HJHs/vujIBfi6YGXWsAOjaCWlnrgIRo2q616OuYoGvJa2WDiw3N0bI/Z4hganCvBZ2AYxtM69nMiPebCb6pDj0hlHgCvtsI1bS90xRLDV7XYrvbyCk11srae+GatqjLQqnR61pYK4MG8AdlR8taMAvuZth1LWgAB1tZsxHzZTKx1Oidwcj6xu6Dt548jnm/mUhq7LoWdpaA3ZmwqMS9UVsoNXi7KNTKwAF8T4nStO3Xy8Ko0VYGDeDQsah5D0rcV4wy5I641whAj3ZgF/Ows4RmIeF9pOIuAYx8JHEAR5itY6PYt+RnisLut6p+AK1vaAAHn7pu6CXN0XBozgg7IgUHcOwsARvAd0jCl0QzYl76A99YJnMA3y8zvD9czGkhOIAvAdDoAH6o5pxvA0R+qUoXcx8O6loANO5asZo2cyanCmni4AAOXczDBnB7r5XwdWBVFdHEZZ6Ao65lvRcl6UtVQl6hILOVgY93aCxfqqJLPf1Fe6yVDS0h6xscwL8uJ2ja9msl/Skp2MqwqQxrZfs+TUf6taKkpZ6Wd5aAutbDRE137zdLudkEzxKwVgadgNsnhB1Nx/k1jZSXurAnO7ANJuha+WRN235tfl0w1XgGXsxbQkpdgfp36wGDpnPd+8PT9LNx8DV1UCvDHu1o6tiXJVOUevpPF4H76bBWBj7kcMD8ZUm61rU0T12Pf1fJVi4wc2OtDHuepdlg0XTHr5V8jnBTT//J/P3OnWXjhqYy1LV21PgvgPv8Oq9yP+syvjFs/4rvsXBDZ2Woa1nvCYe+BK0WOUtd/XO3O70+kMwNtTLQtQ6BL0Fb94cXi2XONl51/55JbQ069q9ksWPR3UZJKzraTcrdrwPzffNg5BtP9SpLcdxnkfkE3Wu191Q2Tff8mkaOa0Cze5krzkW286FvkeWNupb5vBbPl6A5vmWSGc8ESd4M5R4aQFZ3FnYt83kt4EvQxWJRs7Vdwtf4yF/C6hfkHhpAhhOr1JhrtQ7KtDfZ2o3KLm07PdyuN1zs6l/DV+2b3w71wIeGLoB1zqI3TppPlEdrOtKvbW1vo8We/lvkr/3+xbNWXLiII+OutVNW8O9fO7VWNydAaqhBsQfoWoP7Rewr75lCoWD6taabuYRhj89LooYfo6faLTgaZsm9Hm5nCNvcecgI9MbJhXBNM/h15/1mjJ8VtGLyG0m1/nu7iZS6ENQ0q187mWyxY09GtPC08Vg53G2zQ+/EaDpc26ZfF3Vb23Yur8d8GLYv1HVqrI2dwRYj9IMG7U2loqVZxuzp4U42oj4C7I/qP6RAf0/3yURRHjEt89ZCoqYT/Lr77sL4T+L2qOXUWne+rVxYSOZuL3g1zeHX3Vxcnji2FV7/2fw9TGpd29tvJ0A/itA0g1872i70cmk7wyBuKdRPGpb2LK2W4+XdGnzY1TSUAz28k7XzyeWW4Vz1n+w65y1tKw3toBXB3Ww/iPdpwK97X4ldH0389rOEKeUxUW1qW9t6jpBH7RDuVnthT4nWNOjXvaySuQQPk0FNfyun1p2slgsHi+1Wr7E1m63W/iNV6/hxnKZj/LrgaNqfoz9k78S0aOb69+UQLeqNxuHBwmKz1abRbO4ufK01wn6OOYf38E5Wi1vjcdzT0EkYS3S0SHzZ/OcN9f7e4WGDzo8k8owshV+7v/uhzE1EL/PAsVnKqB9pbk27sq1Z+/vlpp/7tSzCr3uZ0hvnI7lFW9cT4tN0IEdpGPfrUE33sq5sR3Vzwe2sfqnMr1Uhfu3NWxHdfEQkdPZpuKbDNI5kxK972XqPfLi8Yw7O8KjrMZruaptN09x+ncu5M9neCFnm1X+KW+L17yVomsOvPblcChnWxkfFUZ/rj6aT/dpXd3InsMzFLfH6ZYVB06i2+fzao+08Uf0uNiJsA/JDqKa9fo1pO5Vfu7Oq+Q9aRI1n9Uuxmu67X3uzrqxn3NyC+ln9qd4nTQN+7a43IVvuZV5NRmIJVbymBfi1Jxdc8hZytFA/UhM0fTx+7comvWsPWv0hPfU5RZKmI/y6XC47fpyYy66slzY7e9DxjdTFrl8qFcuds7I+ZMivfXnZWeapD4jrTwmrpo/Dr/3Zkfd0yjX+hERq+kT4tUfbSr64bg3naefSfOCsrC9+Ha9hfy65cmnT3IOOfDfMz1y/XA7+vXIzh1/79mLE3INW+e2rfjnqrOyk+bUna9tU3tO8I1r9MpumT4RfuzNR1ucnp//FhU2hpWo62q/LhVKpEJFLTFnXtzI/cmET6L+TOhfsnMav3fXWlOUf/41i13+w6ihjXy3Trz3ZmAdbWv3ISNT0SfRrX978BmF+rKvJWpbk1yVUw7H5P3XmxX1Jt/69kvPv9zWn9mtfvQuP6wzglFlVYU2fKL/2ZpJ7ei6eu559WlIUBi0fj19H1ThU091Mf9tLFDycvF5/8vgnw/n5fmg6xq9Fa4eOupeOHlPEehfe+uOTx0fasWnZnUX5dXBeo/9f946Ojp4+NuPp0c+XCjqxd5QdLfvzM+nXnmzROPeNKWqHll3Lz5BfJ9Q+Kh+PXx+vxv4X/BqoN6zpE+zXfm1HZFjTQv36v/iE+Hbgnl2jAAAAAElFTkSuQmCC"
+                        alt="google pay image">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7l6e1M6ojlmDiCwSKHVO5CbKrVDYqY6I91w&usqp=CAU"
+                        alt="Paytm image">
+                </div>
+
+                <div class="inputBox">
+                    <label for="cardName">
+                        Name On Card:
+                    </label>
+                    <input type="text" id="cardName" placeholder="Enter card name" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="cardNum">
+                        Credit Card Number:
+                    </label>
+                    <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="">Exp Month:</label>
+                    <select name="" id="">
+                        <option value="">Choose month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <label for="">Exp Year:</label>
+                        <select name="" id="">
+                            <option value="">Choose Year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" placeholder="1234" required>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Proceed to Checkout" class="submit_btn">
+    </div>
+
+
+    </form>
+
+    </div>
+</body>
+
+</html>
