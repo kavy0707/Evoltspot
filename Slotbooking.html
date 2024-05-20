@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Booking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            text-transform: capitalize;
+            transition: all 0.2s linear;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px;
+            background-image: -webkit-linear-gradient(44deg, #64666a 0%, #50e18d 100%);
+            background-image: -o-linear-gradient(44deg, #64666a 0%, #50e18d 100%);
+            background-image: linear-gradient(134deg, #64666a 0%, #50e18d 100%);
+        }
+
+        .container form {
+            width: 700px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .container form .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .container form .row .col {
+            flex: 1 1 250px;
+        }
+
+        .col .title {
+            font-size: 20px;
+            color: rgb(237, 55, 23);
+            padding-bottom: 5px;
+        }
+
+        .col .inputBox {
+            margin: 15px 0;
+        }
+
+        .col .inputBox label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .col .inputBox input,
+        .col .inputBox select {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+
+        .col .inputBox input:focus,
+        .col .inputBox select:focus {
+            border: 1px solid #000;
+        }
+
+        .col .flex {
+            display: flex;
+            gap: 15px;
+        }
+
+        .col .flex .inputBox {
+            flex: 1 1;
+            margin-top: 5px;
+        }
+
+        .col .inputBox img {
+            height: 34px;
+            margin-top: 5px;
+            filter: drop-shadow(0 0 1px #000);
+        }
+
+        .container form .submit_btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 17px;
+            background: rgb(127, 209, 119);
+            color: #0e0e0e;
+            margin-top: 5px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .container form .submit_btn:hover {
+            background: rgb(84, 196, 227);
+        }
+
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button {
+            display: none;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+          }
+          
+          label {
+            display: inline-block;
+            margin-bottom: 5px;
+          }
+          
+          input[type="radio"] {
+            margin-right: 5px;
+          }
+          
+          input[type="radio"]+label {
+            margin-right: 15px;
+          }
+
+          .btn-hire-me {
+            background: #4061d8;
+            border-color: transparent;
+            color: #fffdfd;
+            border-radius: 50px;
+            padding: .25rem 1rem;
+        }
+
+        .inputBox {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+          }
+          .reason-box {
+            display: none;
+          }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="#">
+            <center>
+                <h1>Slot Booking</h1>
+            </center>
+            <div class="row">
+
+                <div class="col">
+
+                    <div class="inputBox">
+                        <label for="email">
+                            Enter current location:
+                        </label>
+                        <input type="text" id="email" placeholder="Loaction" required>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="email">
+                            Enter time:
+                        </label>
+                        <input type="text" id="email" placeholder="Formate: hh/ mm" required>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+
+                <div class="inputBox">
+                    <label for="cardNum">
+                        Vehicle number plate:
+                    </label>
+                    <input type="text" id="cardNum" placeholder="GJ 03 MR 2290" maxlength="13" required>
+                </div>
+
+                <div class="inputBox">
+                    <label for="">Vehicle Type:</label>
+                    <select name="" id="">
+                        <option value="">Choose Vehicle</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Scooter">Scooter</option>
+                        <option value="Sports car">Sports car</option>
+                        <option value="SUV car">SUV car</option>
+                        <option value="Bus">Bus</option>
+                    </select>
+                </div>
+
+                <div class="inputBox">
+                    <label for="">Vehicle manufactor company:</label>
+                    <select name="" id="">
+                        <option value="">Choose option</option>
+                        <option value="TATA">TATA</option>
+                        <option value="OLA">OLA</option>
+                        <option value="Hero">Hero</option>
+                        <option value="Tesla">Tesla</option>
+                    </select>
+                </div>
+            </div>
+
+            <button><a class="submit_btn" href="payment.html">Payment </a></button>
+
+            <br>
+            <br>
+            <div class="inputBox">
+                <p id="cancelText">Cancellation : </p>
+                <div class="reason-box">
+                  <form action="#">
+                    <label for="reason">Reason :</label><br>
+                    <input type="radio" id="reason1" name="reason" value="unavailable">
+                    <label for="reason1">Planning cancle</label><br>
+                    <input type="radio" id="reason2" name="reason" value="wrong">
+                    <label for="reason2">Personal reason</label><br>
+                    <input type="radio" id="reason3" name="reason" value="changed">
+                    <label for="reason3">xyz</label><br>
+                    <a class="btn btn-primary btn-hire-me" href="refund.html">Submit </a>
+                  </form>
+                </div>
+              </div>
+            
+        </form>
+
+    </div>
+</body>
+<script>
+    document.getElementById("cancelText").addEventListener("click", function() {
+      var reasonBox = document.querySelector(".reason-box");
+      if (reasonBox.style.display === "none" || reasonBox.style.display === "") {
+        reasonBox.style.display = "block";
+      } else {
+        reasonBox.style.display = "none";
+      }
+    });
+  </script>
+</html>
